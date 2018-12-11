@@ -10,10 +10,12 @@ Oh oh. What's missing here?
 
 ## Mount Volumes
 
+Let's mount our configuration from a different Git repository:
+
 ```bash
 git clone git@git.local:mycompany/myconfig.git
 
-docker run --rm -v $PWD/nodejs_config:/etc/myapp \
+docker run --rm -v $PWD/myconfig:/etc/myapp \
   -p 3000:3000 artifactory.local/myapp
 ```
 
@@ -22,6 +24,8 @@ Dog-gone it. What else are we missing?
 ---
 
 ## Environment Variables
+
+Oh. Our environment variable! It tells the configuration where to read from:
 
 ```bash
 docker run --name bob -v $PWD/myconfig:/etc/myapp \

@@ -11,7 +11,7 @@ the services are mixed together.
 
 ## Simple Example
 
-Let's inspect a `docker-compose.yml` file:
+Let's inspect our `docker-compose.yml` file:
 
 ```yaml
 version: "2"
@@ -24,7 +24,7 @@ services:
     ports:
       - "3000:3000"
     volumes:
-      - ./config:/etc/myapp
+      - ./myconfig:/etc/myapp
 ```
 
 ---
@@ -57,7 +57,7 @@ services:
     ports:
       - "3000:3000"
     volumes:
-      - ./config:/etc/myapp
+      - ./myconfig:/etc/myapp
 
   redis:
     image: "redis:alpine"
@@ -86,7 +86,7 @@ services:
     ports:
       - "3000:3000"
     volumes:
-      - ./config:/etc/myapp
+      - ./myconfig:/etc/myapp
 
   redis:
     image: "redis:alpine"

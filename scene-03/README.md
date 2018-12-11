@@ -30,6 +30,7 @@ You are now INSIDE the ~~matrix~~ container!
 > wget -q -O- localhost:3000
 > top
 > free -m
+> exit
 ```
 
 ---
@@ -48,6 +49,7 @@ docker run --rm -it test-node ls -alp
 ```bash
 docker inspect bob | less
 docker logs -f bob
+docker stats bob
 ```
 
 ---
