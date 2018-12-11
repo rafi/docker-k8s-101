@@ -1,0 +1,47 @@
+# Private Services
+
+```bash
+docker run --rm -p 3000:3000 artifactory.local/myapp
+```
+
+Oh oh. What's missing here?
+
+---
+
+## Mount Volumes
+
+```bash
+git clone git@git.local:mycompany/myconfig.git
+
+docker run --rm -v $PWD/nodejs_config:/etc/myapp \
+  -p 3000:3000 artifactory.local/myapp
+```
+
+Dog-gone it. What else are we missing?
+
+---
+
+## Environment Variables
+
+```bash
+docker run --name bob -v $PWD/myconfig:/etc/myapp \
+  -e MYAPP_CFG_ROOT=/etc/myapp -p 3000:3000 \
+  artifactory.local/myapp
+```
+
+---
+
+## Viewing Logs
+
+In a different terminal,
+
+```bash
+docker logs -f bob
+docker exec -it bob tail -f /var/log/myapp/api.log
+```
+
+---
+
+![Bob the beach](./img/bob-beach.png)
+
+---
